@@ -1,0 +1,22 @@
+ALGORITHM Linear_Structure
+VAR
+    arr1,arr2:ARRAY_OF INTEGER[20]
+    sum_distinct:INTEGER:=0
+    sum_equal:INTEGER:=0
+    i,j:INTEGER:=0
+BEGIN
+    WHILE (i<arr1.length-1) DO
+        WHILE(j<arr2.length-1 and arr1[i]!=arr2[j])DO
+        j++
+        END WHILE
+        IF (arr1[i]=arr2[j]) THEN
+        {
+            sum_equal:=sum_equal+arr1[i]
+        }
+        ELSE 
+        sum_distinct:=sum_distinct+arr1[i] 
+        i++
+    END WHILE
+    write("sum of distinct: ", sum_distinct)
+    write("sum of equal: ", sum_equal) 
+END
